@@ -149,10 +149,9 @@ bool checkRPLIDARHealth(ILidarDriver * drv)
                 ROS_ERROR("Error, rplidar internal error detected. Please reboot the device to retry.");
 				return false;
         }
-    } else {
-        ROS_ERROR("Error, cannot retrieve rplidar health code: %x", op_result);
-        return false;
-    }
+    } 
+    ROS_ERROR("Error, cannot retrieve rplidar health code: %x", op_result);
+    return false;
 }
 
 bool stop_motor(std_srvs::Empty::Request &req,
